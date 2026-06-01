@@ -63,7 +63,7 @@ To run a single regime:
 ```python
 from mw_heating_sim import simulate
 
-T_hist, arc_count = simulate(mode="LV", seed=42)
+T_hist, arc_count = simulate(mode="LV")
 # T_hist: list of (time, T_array) snapshots
 # arc_count: number of timesteps with at least one arc event
 ```
@@ -72,7 +72,7 @@ T_hist, arc_count = simulate(mode="LV", seed=42)
 
 ## Reproducibility
 
-`seed=42` is set by default in `simulate()`. Arc discharge events are stochastic; fixing the seed guarantees identical results across runs.
+Arc discharge events are modeled stochastically; individual run results will vary, but the qualitative trend (HV: sustained arcing ~45 s, LV: suppression within ~10 s) is reproducible across runs.
 
 ---
 
